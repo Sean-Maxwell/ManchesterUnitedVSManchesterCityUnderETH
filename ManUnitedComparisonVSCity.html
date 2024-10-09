@@ -8936,7 +8936,7 @@ Goal difference for Manchester City against top 5 teams: 29
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the total number of games, goals scored, and goals conceded by Manchester United and Manchester City against the rest of the Premier League teams</span>
@@ -9002,7 +9002,7 @@ Total goals conceded by Manchester City against rest of the league: 100
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a bar chart to compare goals scored against rest of the league</span>
@@ -9046,7 +9046,7 @@ Total goals conceded by Manchester City against rest of the league: 100
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a bar chart to compare goals conceded against rest of the league</span>
@@ -9090,7 +9090,7 @@ Total goals conceded by Manchester City against rest of the league: 100
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate goal difference for both teams against the rest of the Premier League</span>
@@ -9133,6 +9133,191 @@ Total goals conceded by Manchester City against rest of the league: 100
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filter the dataset to find matches where Manchester United were defeated</span>
+<span class="n">df_united_defeats</span> <span class="o">=</span> <span class="n">dfUtd</span><span class="p">[((</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Team'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Man United'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Score'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Score'</span><span class="p">]))</span> <span class="o">|</span>
+                          <span class="p">((</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Team'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Man United'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Score'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Score'</span><span class="p">]))]</span>
+
+<span class="c1"># Select relevant columns: Date, Team names, and score</span>
+<span class="n">defeat_details</span> <span class="o">=</span> <span class="n">df_united_defeats</span><span class="p">[[</span><span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Home Team'</span><span class="p">,</span> <span class="s1">'Away Team'</span><span class="p">,</span> <span class="s1">'Home Score'</span><span class="p">,</span> <span class="s1">'Away Score'</span><span class="p">]]</span>
+
+<span class="c1"># Print the details of teams that have defeated Manchester United</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">defeat_details</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>           Date       Home Team       Away Team Home Score Away Score
+0    13/08/2022      Man United        Brighton          1          2
+1    22/08/2022       Brentford      Man United          4          0
+5    08/09/2022      Man United   Real Sociedad          0          1
+7    02/10/2022        Man City      Man United          6          3
+17   06/11/2022     Aston Villa      Man United          3          1
+20   07/12/2022          CÃ¡diz      Man United          4          2
+21   10/12/2022      Real Betis      Man United          1          0
+30   22/01/2023         Arsenal      Man United          3          2
+42   05/03/2023       Liverpool      Man United          7          0
+47   02/04/2023       Newcastle      Man United          2          0
+52   20/04/2023         Sevilla      Man United          3          0
+56   04/05/2023        Brighton      Man United          1          0
+57   07/05/2023        West Ham      Man United          1          0
+61   03/06/2023        Man City      Man United          2          1
+65   26/07/2023      Man United         Wrexham          1          3
+66   27/07/2023     Real Madrid      Man United          2          0
+67   31/07/2023      Man United        Dortmund          2          3
+71   19/08/2023       Tottenham      Man United          2          0
+73   03/09/2023         Arsenal      Man United          3          1
+74   16/09/2023      Man United        Brighton          1          3
+75   20/09/2023   Bayern Munich      Man United          4          3
+78   30/09/2023      Man United  Crystal Palace          0          1
+79   03/10/2023      Man United     Galatasaray          2          3
+83   29/10/2023      Man United        Man City          0          3
+84   01/11/2023      Man United       Newcastle          0          3
+86   08/11/2023      Copenhagen      Man United          4          3
+90   02/12/2023       Newcastle      Man United          1          0
+92   09/12/2023      Man United     Bournemouth          0          3
+93   12/12/2023      Man United   Bayern Munich          0          1
+95   23/12/2023        West Ham      Man United          2          0
+97   30/12/2023    Nottm Forest      Man United          2          1
+105  24/02/2024      Man United          Fulham          1          2
+107  03/03/2024        Man City      Man United          3          1
+111  04/04/2024         Chelsea      Man United          4          3
+117  06/05/2024  Crystal Palace      Man United          4          0
+118  12/05/2024      Man United         Arsenal          0          1
+122  15/07/2024       Rosenborg      Man United          1          0
+124  28/07/2024         Arsenal      Man United    2â¯(3)    1â¯(4)
+126  04/08/2024      Man United       Liverpool          0          3
+127  10/08/2024        Man City      Man United    1â¯(7)    1â¯(6)
+129  24/08/2024        Brighton      Man United          2          1
+130  01/09/2024      Man United       Liverpool          0          3
+135  28/09/2024      Man United       Tottenham          0          3
+140  28/08/2016      Man United        Man City          1          2
+156  28/08/2016      Man United        Man City          1          2
+235  06/12/2017      Man United        Man City          1          2
+287  07/11/2018        Man City      Man United          3          1
+325  20/04/2019      Man United        Man City          0          2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filter the dataset to find matches where Manchester United drew</span>
+<span class="n">df_united_draws</span> <span class="o">=</span> <span class="n">dfUtd</span><span class="p">[((</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Team'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Man United'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Score'</span><span class="p">]</span> <span class="o">==</span> <span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Score'</span><span class="p">]))</span> <span class="o">|</span>
+                        <span class="p">((</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Team'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Man United'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Score'</span><span class="p">]</span> <span class="o">==</span> <span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Score'</span><span class="p">]))]</span>
+
+<span class="c1"># Select relevant columns: Date, Team names, and score</span>
+<span class="n">draw_details</span> <span class="o">=</span> <span class="n">df_united_draws</span><span class="p">[[</span><span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Home Team'</span><span class="p">,</span> <span class="s1">'Away Team'</span><span class="p">,</span> <span class="s1">'Home Score'</span><span class="p">,</span> <span class="s1">'Away Score'</span><span class="p">]]</span>
+
+<span class="c1"># Print the details of teams that have drawn with Manchester United</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">draw_details</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>           Date       Home Team      Away Team Home Score Away Score
+11   16/10/2022      Man United      Newcastle          0          0
+13   22/10/2022         Chelsea     Man United          1          1
+29   18/01/2023  Crystal Palace     Man United          1          1
+35   08/02/2023      Man United   Leeds United          2          2
+37   16/02/2023       Barcelona     Man United          2          2
+44   12/03/2023      Man United    Southampton          0          0
+50   13/04/2023      Man United        Sevilla          2          2
+54   27/04/2023       Tottenham     Man United          2          2
+69   06/08/2023      Man United  Athletic Club          1          1
+89   29/11/2023     Galatasaray     Man United          3          3
+94   17/12/2023       Liverpool     Man United          0          0
+99   14/01/2024      Man United      Tottenham          2          2
+110  30/03/2024       Brentford     Man United          1          1
+112  07/04/2024      Man United      Liverpool          2          2
+113  13/04/2024     Bournemouth     Man United          2          2
+116  27/04/2024      Man United        Burnley          1          1
+133  21/09/2024  Crystal Palace     Man United          0          0
+134  25/09/2024      Man United         Twente          1          1
+201  23/04/2017        Man City     Man United          0          0
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filter the dataset to find matches where Manchester United won</span>
+<span class="n">df_united_wins</span> <span class="o">=</span> <span class="n">dfUtd</span><span class="p">[((</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Team'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Man United'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Score'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Score'</span><span class="p">]))</span> <span class="o">|</span>
+                       <span class="p">((</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Team'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Man United'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Away Score'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dfUtd</span><span class="p">[</span><span class="s1">'Home Score'</span><span class="p">]))]</span>
+
+<span class="c1"># Select relevant columns: Date, Team names, and score</span>
+<span class="n">win_details</span> <span class="o">=</span> <span class="n">df_united_wins</span><span class="p">[[</span><span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Home Team'</span><span class="p">,</span> <span class="s1">'Away Team'</span><span class="p">,</span> <span class="s1">'Home Score'</span><span class="p">,</span> <span class="s1">'Away Score'</span><span class="p">]]</span>
+
+<span class="c1"># Print the details of teams that have been defeated by Manchester United</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">win_details</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>           Date       Home Team   Away Team Home Score Away Score
+2    27/08/2022      Man United   Liverpool          2          1
+3    01/09/2022     Southampton  Man United          0          1
+4    04/09/2022  Leicester City  Man United          0          1
+6    15/09/2022         Sheriff  Man United          0          2
+8    06/10/2022         Omonoia  Man United          2          3
+..          ...             ...         ...        ...        ...
+132  17/09/2024      Man United    Barnsley          7          0
+150  23/10/2016      Man United    Man City          1          0
+166  23/10/2016      Man United    Man City          1          0
+207  21/05/2017      Man United    Man City          2          0
+261  04/04/2018        Man City  Man United          2          3
+
+[79 rows x 5 columns]
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9140,7 +9325,7 @@ Total goals conceded by Manchester City against rest of the league: 100
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Linear-regresion">Linear regresion<a class="anchor-link" href="#Linear-regresion">¶</a></h1><p>Prediction for Man United, How many games will they win lose draw in the Premier league this season</p>
+<h1 id="Linear-regression">Linear regression<a class="anchor-link" href="#Linear-regression">¶</a></h1><p>Prediction for Man United, How many games will they win lose draw in the Premier league this season</p>
 </div>
 </div>
 </div>
@@ -9174,7 +9359,7 @@ Total goals conceded by Manchester City against rest of the league: 100
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load the notebook</span>
